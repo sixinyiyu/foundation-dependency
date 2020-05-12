@@ -48,14 +48,15 @@
 		<commons-fileupload.version>1.4</commons-fileupload.version>
 
 		<!-- maven plugin -->
-		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
 		<maven.war.plugin.version>3.0.0</maven.war.plugin.version>
-		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
-		<maven.javadoc.plugin.version>2.10.4</maven.javadoc.plugin.version>
+		<maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+		<maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
 		<maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
 		<maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
-		<maven.checkstyle.plugin.version>3.0.0</maven.checkstyle.plugin.version>
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<maven.checkstyle.plugin.version>3.1.0</maven.checkstyle.plugin.version>
 		<maven.dependency.plugin.vervion>3.0.1-SNAPSHOT</maven.dependency.plugin.vervion>
 	</properties>
 
@@ -66,6 +67,17 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<scm>
+		<url>https://github.com/sixinyiyu/foundation-dependency</url>
+		<connection>
+			scm:git:git://github.com/sixinyiyu/foundation-dependency.git
+		</connection>
+		<developerConnection>
+			scm:git:ssh://git@github.com/sixinyiyu/foundation-dependency.git
+		</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
 	<developers>
 		<developer>
@@ -189,36 +201,28 @@
 	
 	<repositories>
 		<repository>
-			<id>releases</id>
-			<name>releases</name>
-			<url>http://192.168.0.33:8081/repository/maven-public/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
+			<id>sonatype-nexus-staging</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 		<repository>
-			<id>snapshots</id>
-			<name>snapshots</name>
-			<url>http://192.168.0.33:8081/repository/maven-snapshots/</url>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</repository>
 	</repositories>
 	
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
-			<name>Nexus Releases Repository</name>
-			<url>http://192.168.0.33:8081/repository/maven-releases/</url>
+			<id>sonatype-nexus-staging</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 		
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Nexus Snapshots Repository</name>
-			<url>http://192.168.0.33:8081/repository/maven-snapshots/</url>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -265,17 +269,6 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>${maven.clean.plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>${maven.deploy.plugin.version}</version>
-				</plugin>
-				<!-- 代码规范 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>${maven.checkstyle.plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.springframework.boot</groupId>

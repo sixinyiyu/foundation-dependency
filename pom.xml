@@ -41,7 +41,7 @@
 		<junit.version>4.12</junit.version>
 		
 		<commons-exec.version>1.3</commons-exec.version>
-		<okhttp.version>4.6.0</okhttp.version>
+		<okhttp.version>4.8.0</okhttp.version>
 		
 		<jsonwebtoken.version>0.10.6</jsonwebtoken.version>
 		<commons-fileupload.version>1.4</commons-fileupload.version>
